@@ -7,6 +7,7 @@ import io
 from plot_dos import *
 from check_convergence import *
 from plot_rho import *
+from plot_bandstr import *
 st.title('RMG Postprocess User Interface')
 st.markdown("Welcome to use rmg package! This interface will help you plot some resutls from RMG")
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;justify-content: left}<style>',
@@ -20,7 +21,7 @@ st.sidebar.markdown("")
 st.sidebar.markdown("")
 st.sidebar.markdown("")
 
-what_to_plot = st.sidebar.radio("what to plot", ['Charge Density', 'DOS', 'Check Convergence'])
+what_to_plot = st.sidebar.radio("what to plot", ['Charge Density', 'DOS', 'Band Structure', 'Check Convergence'])
 if what_to_plot == 'DOS':
     plot_dos()
 elif what_to_plot == 'Check Convergence':
@@ -33,3 +34,5 @@ elif what_to_plot == 'Check Convergence':
         plot_totE()
 elif what_to_plot == "Charge Density":
     plot_rho()
+elif what_to_plot == "Band Structure":
+    plot_band()
