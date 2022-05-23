@@ -6,15 +6,14 @@ import os
 import io
 def plot_dos():
 
-    file_op = st.sidebar.radio("use an example or upload a file by yourself", ["upload a .dat file", "C60 example"])
+    #file_op = st.sidebar.radio("use an example or upload a file by yourself", ["C60 example", "upload a .dat file"])
     data =""
-    if file_op == "C60 example":
+    upload_file = st.sidebar.file_uploader("Upload dos_tot_spin*.dat to  plot", type='dat')
+    if upload_file:
+        data = upload_file.readlines()
+    else:
         with open("C60/dos_tot_spin0.dat", "r") as f:
             data = f.readlines()
-    else:
-        upload_file = st.sidebar.file_uploader("Upload dos_tot_spin*.dat to  plot", type='dat')
-        if upload_file:
-            data = upload_file.readlines()
     #print(data)
         
     if data:    

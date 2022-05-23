@@ -14,9 +14,7 @@ st.write('<style>div.row-widget.stRadio > div{flex-direction:row;justify-content
         unsafe_allow_html=True)
 
 
-st.sidebar.markdown("")
-st.sidebar.markdown("")
-st.sidebar.markdown("")
+st.sidebar.header("By default, the interface will show example plots. For charge density, density of states, and convergence check, C60 molecule is used. For band structure plot, we use the primitive diamond cell")
 st.sidebar.markdown("")
 st.sidebar.markdown("")
 st.sidebar.markdown("")
