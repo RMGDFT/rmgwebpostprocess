@@ -33,7 +33,7 @@ elif what_to_plot == 'Check Convergence':
     if what_to_check == 'Total Energy':
         plot_totE()
 elif what_to_plot == "Charge Density":
-    pass
-   # plot_rho()
+   # pass
+    plot_rho()
 elif what_to_plot == "Band Structure":
     plot_band()
