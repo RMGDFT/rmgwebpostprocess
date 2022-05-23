@@ -1,6 +1,6 @@
 import streamlit as st
-import py3Dmol
-from stmol import showmol
+#import py3Dmol
+#from stmol import showmol
 def plot_rho():
 
     file_op = st.sidebar.radio("use example or upload a cube file", ["C60 example","upload a .cube file"])
