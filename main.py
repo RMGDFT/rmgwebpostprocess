@@ -10,7 +10,7 @@ from plot_rho import *
 from plot_bandstr import *
 from view_xyz import *
 st.title('RMG Postprocess User Interface')
-st.markdown("Welcome to use rmg package! This interface will help you plot some resutls from RMG")
+st.markdown("Welcome to use rmg package! This interface will help you plot some results from RMG")
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;justify-content: left}<style>',
         unsafe_allow_html=True)
 
