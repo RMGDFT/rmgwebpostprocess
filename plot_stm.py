@@ -12,8 +12,6 @@ def plot_stm():
     if upload_file:
         rho_data = upload_file.read().decode('utf-8')
         rho_data_lines = rho_data.split("\n")
-        for i in range(len(rho_data_lines)):
-            rho_data_lines[i] = rho_data_lines[i].decode('utf-8')
     else:
         with open("graphene/STM_bias_1.00_spin0.cube", "r") as f:
             rho_data = f.read()
@@ -65,22 +63,19 @@ def plot_stm():
     rho_xy = rho_3d[:,:, z_height]
 
      
-    cs, col1, col2 = st.columns([0.1, 1,1])
+    cs, col1, col2,col3 = st.columns([0.1, 1,1,1])
     xcells = col1.number_input("expand in x", 1)
     ycells = col2.number_input("expand in y", 1)
-    X = np.ndarray([nx *xcells,ny *ycells], dtype = float)
-    Y = np.ndarray([nx *xcells,ny *ycells], dtype = float)
-    rho_ext = np.ndarray([nx *xcells,ny *ycells], dtype = float)
+    spline_type = col3.checkbox("spline interpolation for image", False)
+    X = np.ndarray([ny *ycells,nx *xcells], dtype = float)
+    Y = np.ndarray([ny *ycells,nx *xcells], dtype = float)
+    rho_ext = np.ndarray([ny *ycells,nx *xcells], dtype = float)
     a_length = vec[0][0] * nx
-    for i in range(nx * xcells):
-        for j in range(ny * ycells):
-            X[i][j] = i * vec[0][0] + j * vec[1][0]
-            #if X[i][j] > a_length - 1.0e-10:
-            #    X[i][j] -= a_length
-            #if X[i][j] < 1.0e-10:
-            #    X[i][j] += a_length
-            Y[i][j] = i * vec[0][1] + j * vec[1][1]
-            rho_ext[i][j] = rho_xy[i%nx][j%ny]
+    for j in range(ny * ycells):
+        for i in range(nx * xcells):
+            X[j][i] = i * vec[0][0] + j * vec[1][0]
+            Y[j][i] = i * vec[0][1] + j * vec[1][1]
+            rho_ext[j][i] = rho_xy[i%nx][j%ny]
 
     xmin = X.min()
     xmax = X.max()
@@ -88,8 +83,16 @@ def plot_stm():
     ymax = Y.max()
     
     fig, ax = plt.subplots(figsize=(15,15))
-    ax.pcolormesh(X,Y, rho_ext)
-    ax.set_aspect((ymax-ymin)/(xmax-xmin))
+    
+    if abs(vec[1][0]) >1.0e-5:
+        ax.pcolormesh(X,Y, rho_ext)
+    else:
+        if spline_type:
+            ax.imshow(rho_ext, interpolation="spline16")
+        else:
+            ax.imshow(rho_ext)
+    #ax.set_aspect((ymax-ymin)/(xmax-xmin))
+    ax.set_aspect("equal")
     #ax.contour(X,Y, rho_xy)
     #ax.tripcolor(X,Y, rho_xy)
     #ax.image(rho_xy)

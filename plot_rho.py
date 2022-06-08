@@ -8,8 +8,8 @@ def plot_rho():
     if upload_file:
         rho_data = upload_file.read().decode('utf-8')
         rho_data_lines = rho_data.split("\n")
-        for i in range(len(rho_data_lines)):
-            rho_data_lines[i] = rho_data_lines[i].decode('utf-8')
+        #for i in range(len(rho_data_lines)):
+        #    rho_data_lines[i] = rho_data_lines[i].decode('utf-8')
     else:
         with open("C60/density.cube", "r") as f:
             rho_data = f.read()
