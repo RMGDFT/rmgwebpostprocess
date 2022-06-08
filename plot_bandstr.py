@@ -94,7 +94,6 @@ def plot_band():
     fn = 'bandstructure.png'
     img = io.BytesIO()
     plt.tight_layout()
-    plt.figure(dpi=600)
     for axis in ['top','bottom','left','right']:
         ax.spines[axis].set_linewidth(2.0)
     quality_dpi = st.sidebar.number_input("dpi of image to be saved", 600)    

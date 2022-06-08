@@ -7,6 +7,7 @@ import io
 from plot_dos import *
 from check_convergence import *
 from plot_rho import *
+from plot_stm import *
 from plot_bandstr import *
 from view_xyz import *
 st.title('RMG Postprocess User Interface')
@@ -20,7 +21,7 @@ st.sidebar.markdown("")
 st.sidebar.markdown("")
 st.sidebar.markdown("")
 
-what_to_plot = st.sidebar.radio("what to plot", ['Charge Density', 'DOS', 'Band Structure', 'Check Convergence', 'view xyz'])
+what_to_plot = st.sidebar.radio("what to plot", ['Charge Density', 'DOS', 'Band Structure', 'Check Convergence', 'view xyz', 'STM'])
 if what_to_plot == 'DOS':
     plot_dos()
 elif what_to_plot == 'Check Convergence':
@@ -38,3 +39,5 @@ elif what_to_plot == "Band Structure":
     plot_band()
 elif what_to_plot == "view xyz":
     view_xyz()
+elif what_to_plot == "STM":
+    plot_stm()
