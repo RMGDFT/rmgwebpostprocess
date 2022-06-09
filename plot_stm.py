@@ -37,23 +37,10 @@ def plot_stm():
         st.markdown("the first vector need to be along x axis")
         return
 
-    vol_data_start_line = num_atoms + 4
-    num_lines_per_z = (nz*real_or_complex)//6 +1
+    vol_data = ''.join(rho_data_lines[num_atoms+4:]).split()
+    rho_1d = np.array(vol_data)
 
-    rho_3d = np.ndarray([nx,ny,nz*real_or_complex], dtype = float)
-    for ix in range(nx):
-        for iy in range(ny):
-            line_index = (ix * ny + iy) * num_lines_per_z + vol_data_start_line
-            z_count = 0
-            for iz_line in range(line_index, line_index+num_lines_per_z):
-                if z_count == nz * real_or_complex:
-                    break
-                tem_str = rho_data_lines[iz_line].split()
-                for s in tem_str:
-                    rho_3d[ix][iy][z_count] = float(s)
-                    z_count += 1
-
-    rho_1d = rho_3d.reshape(nx*ny*nz)
+    rho_3d = rho_1d.reshape(nx,ny,nz*real_or_complex)
 
 
     STM_mode = st.sidebar.radio("STM mode", ["constant height", "constant current"])
