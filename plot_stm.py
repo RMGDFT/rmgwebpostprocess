@@ -66,7 +66,7 @@ def plot_stm():
 
     cax = fig.add_axes([ax.get_position().x1+0.01,ax.get_position().y0,0.02,ax.get_position().height])
 
-#    plt.colorbar(pos, cax=cax)
+    plt.colorbar(pos, cax=cax)
 
 
     fn = 'stm.png'
