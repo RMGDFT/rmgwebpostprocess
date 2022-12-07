@@ -7,7 +7,7 @@ import io
 from plot_dos import *
 from check_convergence import *
 from plot_rho import *
-from plot_stm import *
+from plot_stm_slowversion import *
 from plot_bandstr import *
 from view_xyz import *
 st.title('RMG Postprocess User Interface')
