@@ -116,16 +116,16 @@ def plot_stm():
     plt.colorbar(pos, cax=cax)
 
 
-    fn = 'stm.png'
+    fn = 'stm.svg'
     img = io.BytesIO()
     #plt.tight_layout()
     quality_dpi = st.sidebar.number_input("dpi of image to be saved", 600)    
-    plt.savefig(img, format='png', dpi =quality_dpi)
+    plt.savefig(img, format='svg', dpi =quality_dpi)
     btn = st.sidebar.download_button(
        label="Download image",
        data=img,
        file_name=fn,
-       mime="image/png"
+       mime="image/svg"
     )
 
     st.pyplot(fig)
