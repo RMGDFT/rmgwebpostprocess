@@ -86,7 +86,7 @@ def plot_stm():
                #print(ix,iy,iz_tem, rho_xy[ix][iy], rho_3d[ix,iy,iz_tem], rho_3d[ix,iy,iz_tem+1])
 
      
-    color_map = st.sidebar.radio("color map", ["hot", "inferno", "Greys"])
+    color_map = st.sidebar.radio("color map", ["hot", "inferno", "Greys_r"])
 
     cs, col1, col2,col3 = st.columns([0.1, 1,1,1])
     xcells = col1.number_input("expand in x", 1)
