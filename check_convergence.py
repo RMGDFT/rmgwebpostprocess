@@ -47,19 +47,19 @@ def plot_totE():
     ax.tick_params(axis='x', labelsize=20)
     ax.tick_params(axis='y', labelsize=20)
 
-    fn = 'totE.png'
+    fn = 'totE.svg'
     img = io.BytesIO()
     plt.tight_layout()
     for axis in ['top','bottom','left','right']:
         ax.spines[axis].set_linewidth(2.0)
     quality_dpi = st.sidebar.number_input("dpi of image to be saved", 600)
-    plt.savefig(img, format='png', dpi =quality_dpi)
+    plt.savefig(img, format='svg', dpi =quality_dpi)
 
     btn = st.sidebar.download_button(
        label="Download image",
        data=img,
        file_name=fn,
-       mime="image/png"
+       mime="image/svg"
     )
 
     st.pyplot(fig)
@@ -109,20 +109,20 @@ def plot_deltaE():
     ax.tick_params(axis='x', labelsize=20)
     ax.tick_params(axis='y', labelsize=20)
 
-    fn = 'deltaE.png'
+    fn = 'deltaE.svg'
     img = io.BytesIO()
     plt.tight_layout()
     plt.yscale("log")
     for axis in ['top','bottom','left','right']:
         ax.spines[axis].set_linewidth(2.0)
     quality_dpi = st.sidebar.number_input("dpi of image to be saved", 600)
-    plt.savefig(img, format='png', dpi =quality_dpi)
+    plt.savefig(img, format='svg', dpi =quality_dpi)
 
     btn = st.sidebar.download_button(
        label="Download image",
        data=img,
        file_name=fn,
-       mime="image/png"
+       mime="image/svg"
     )
 
     st.pyplot(fig)
@@ -169,20 +169,20 @@ def plot_rms():
     ax.tick_params(axis='x', labelsize=20)
     ax.tick_params(axis='y', labelsize=20)
 
-    fn = 'rms.png'
+    fn = 'rms.svg'
     img = io.BytesIO()
     plt.tight_layout()
     plt.yscale("log")
     for axis in ['top','bottom','left','right']:
         ax.spines[axis].set_linewidth(2.0)
     quality_dpi = st.sidebar.number_input("dpi of image to be saved", 600)
-    plt.savefig(img, format='png', dpi =quality_dpi)
+    plt.savefig(img, format='svg', dpi =quality_dpi)
 
     btn = st.sidebar.download_button(
        label="Download image",
        data=img,
        file_name=fn,
-       mime="image/png"
+       mime="image/svg"
     )
 
     st.pyplot(fig)
