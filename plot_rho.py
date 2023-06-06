@@ -49,15 +49,15 @@ def plot_rho():
 
     rho_view = py3Dmol.view()
     rho_view.addVolumetricData(rho_data, "cube", {'isoval': isosurface_value, 'color': iso_color, 'opacity': 0.85})
-    rho_view.addModel(rho_data, "cube", 'mol')
+    #rho_view.addModel(rho_data, "cube", 'mol')
                       
 
     #rho_view.setStyle({'stick':{}})
     #rho_view.setStyle({'sphere':{radius~0.2}})
     scale = 0.18
     radius = 0.05
-    rho_view.setStyle({'sphere':{'colorscheme':'Jmol','scale':scale},
-                       'stick':{'colorscheme':'Jmol', 'radius':radius}})
+    #rho_view.setStyle({'sphere':{'colorscheme':'Jmol','scale':scale},
+    #                   'stick':{'colorscheme':'Jmol', 'radius':radius}})
     rho_view.zoomTo()
     if spin:
         rho_view.spin(True)
