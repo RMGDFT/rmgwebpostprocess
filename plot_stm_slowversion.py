@@ -98,8 +98,8 @@ def plot_stm():
     a_length = vec[0][0] * nx
     for j in range(ny * ycells):
         for i in range(nx * xcells):
-            X[i][j] = i * vec[0][0] + j * vec[0][1]
-            Y[i][j] = i * vec[1][0] + j * vec[1][1]
+            X[i][j] = i * vec[0][0] + j * vec[1][0]
+            Y[i][j] = i * vec[0][1] + j * vec[1][1]
             rho_ext[i][j] = float(rho_xy[i%nx][j%ny])
 
     fig, ax = plt.subplots(figsize=(15,15))
