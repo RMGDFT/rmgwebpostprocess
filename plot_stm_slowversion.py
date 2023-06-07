@@ -14,7 +14,7 @@ def plot_stm():
         rho_data = upload_file.read().decode('utf-8')
         rho_data_lines = rho_data.split("\n")
     else:
-        with open("graphene/STM_bias_1.00_spin0.cube", "r") as f:
+        with open("STM/STM_bias_1.00_spin0.cube", "r") as f:
             rho_data = f.read()
             rho_data_lines = rho_data.split("\n")
 
