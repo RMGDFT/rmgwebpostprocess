@@ -21,8 +21,7 @@ st.sidebar.markdown("")
 st.sidebar.markdown("")
 st.sidebar.markdown("")
 
-#what_to_plot = st.sidebar.radio("what to plot", ['Charge Density', 'DOS', 'Band Structure', 'Check Convergence', 'view xyz', 'STM'])
-what_to_plot = st.sidebar.radio("what to plot", ['Charge Density', 'DOS', 'Band Structure', 'Check Convergence', 'STM'])
+what_to_plot = st.sidebar.radio("what to plot", ['Charge Density', 'DOS', 'Band Structure', 'Check Convergence', 'view xyz', 'STM'])
 if what_to_plot == 'DOS':
     plot_dos()
 elif what_to_plot == 'Check Convergence':

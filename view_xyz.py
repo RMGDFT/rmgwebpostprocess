@@ -14,7 +14,7 @@ def view_xyz():
     spin = st.sidebar.checkbox('Spin', value = False)
 
     xyz_view = py3Dmol.view()
-    xyz_view.addModel(xyz_data, "xyz", 'mol')
+    xyz_view.addModel(xyz_data, "xyz")
                       
     scale = 0.18
     radius = 0.05
