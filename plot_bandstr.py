@@ -6,7 +6,7 @@ import os
 import io
 def plot_band():
 
-    upload_file = st.sidebar.file_uploader("", type='xmgr')
+    upload_file = st.sidebar.file_uploader("")
     if upload_file:
         data = upload_file.readlines()
         for i in range(len(data)):
