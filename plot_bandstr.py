@@ -23,8 +23,10 @@ def plot_band():
     x_tick_sym = []
     for line in data:
         if "xaxis  tick major" in line:
-            tem_str = line.split()
-            x_tick_pos.append(float(tem_str[len(tem_str) -1]))
+            print(line)
+            tem_str = line.split(",")
+            if len(tem_str) == 2:
+                x_tick_pos.append(float(tem_str[1]))
         if "xaxis  ticklabel" in line:
             tem_str = line.split('"')
             if len(tem_str) > 1:
