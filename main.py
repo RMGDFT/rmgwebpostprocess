@@ -38,7 +38,6 @@ elif what_to_plot == "Charge Density":
 elif what_to_plot == "Band Structure":
     plot_band()
 elif what_to_plot == "view xyz":
-    st.markdown("not able to view strucutre now"
-    #view_xyz()
+    view_xyz()
 elif what_to_plot == "STM":
     plot_stm()
