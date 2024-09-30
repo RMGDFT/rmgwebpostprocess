@@ -1,5 +1,8 @@
+#!/usr/bin/python3
+
+import sys
+
 import math
-import numpy as np
 import numpy as np
 import matplotlib.pyplot as plt
 import os
@@ -113,8 +116,6 @@ cax = fig.add_axes([ax.get_position().x1+0.01,ax.get_position().y0,0.02,ax.get_p
 plt.colorbar(pos, cax=cax)
 
 
-fn = 'stm.png'
-img = io.BytesIO()
-#plt.tight_layout()
-plt.savefig(img, format='png', dpi =600)
+fn=sys.argv[1].replace('cube', 'png')
+plt.savefig(fn, format='png', dpi =600)
 
